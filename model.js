@@ -1,4 +1,5 @@
 const options = [...document.getElementById('sectionOptions').children]
+const lines = [...document.querySelectorAll('#sectionOptions > article > div + h3.uppercase.text-center')]
 
 document.addEventListener('click', event => {
     /**
@@ -6,22 +7,21 @@ document.addEventListener('click', event => {
      */
     const target = event.target
     if(target.matches('#sectionOptions :is(#optionPaper, #optionPaper :is(div), #optionPaper :is(figure, img))')) {
-        options.forEach(option => {
-            if(!option.matches('#optionPaper, #youPicked')) {
-                option.classList.add('hidden')
-            }
-        })
+        cleanNodes(options, '#optionPaper, #youPicked')
     }else if(target.matches('#sectionOptions :is(#optionScissors, #optionScissors :is(div), #optionScissors :is(figure, img))')) {
-        options.forEach(option => {
-            if(!option.matches('#optionScissors, #youPicked')) {
-                option.classList.add('hidden')
-            }
-        })
+        cleanNodes(options, '#optionScissors, #youPicked')
     }else if(target.matches('#sectionOptions :is(#optionRock, #optionRock :is(div), #optionRock :is(figure, img))')) {
-        options.forEach(option => {
-            if(!option.matches('#optionRock, #youPicked')) {
-                option.classList.add('hidden')
-            }
-        })
+        cleanNodes(options, '#optionRock, #youPicked')
     }
 })
+
+
+/**
+ * 
+ * @param {Array<Element>} optionsNodes 
+ * @param {String} nodeSelector 
+ */
+function cleanNodes(optionsNodes, nodeSelector) {
+    optionsNodes.filter(optionNode => !optionNode.matches(nodeSelector))
+                .forEach(optionNode => optionNode.remove())
+}
