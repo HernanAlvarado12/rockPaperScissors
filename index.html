@@ -46,35 +46,39 @@
                     <span class ="text-text text-lg font-bold">12</span>
                 </div>
             </section>
-            <section class ="my-8 grid justify-items-center grid-cols-2">
-                <article class ="relative">
+            <section class ="max-w-2xl mx-auto my-8 grid justify-items-center grid-cols-2" id ="sectionOptions">
+                <article class ="relative cursor-pointer select-none" id ="optionPaper">
                     <div class ="w-13 h-13 flex items-center justify-center relative z-10 rounded-full shadow-paper bg-paper-200">
                         <figure class ="w-10 h-10 flex items-center justify-center rounded-full shadow-option bg-white">
-                            <img src ="./assets/paper.svg" alt ="paper icon">
+                            <img class ="select-none" src ="./assets/paper.svg" alt ="paper icon">
                         </figure>
                     </div>
-                    <span class ="w-18 h-1.5 absolute top-6.5 left-6.5 origin-left rotate-[58deg] bg-line"></span>
+                    <span class ="w-18 h-1.5 absolute top-6.5 left-6.5 origin-left rotate-[58deg] bg-line peer"></span>
+                    <h3 class ="mt-1.5 text-white text-md uppercase text-center " id ="youPicked">you picked</h3>
                 </article>
-                <article class ="relative">
+                <article class ="relative cursor-pointer" id ="optionScissors">
                     <div class ="w-13 h-13 flex items-center justify-center relative z-10 rounded-full shadow-scissor bg-scissor-200">
                         <figure class ="w-10 h-10 flex items-center justify-center rounded-full shadow-option bg-white">
-                            <img src ="./assets/scissors.svg" alt ="scissors icon">
+                            <img class ="select-none" src ="./assets/scissors.svg" alt ="scissors icon">
                         </figure>
                     </div>
                     <span class ="w-18 h-1.5 absolute top-6.5 left-6.5 origin-left rotate-180 bg-line"></span>
+                    <h3 class ="mt-1.5 text-white text-md uppercase text-center" id ="youPicked">you picked</h3>
                 </article>
-                <article class ="relative col-span-2">
+                <article class ="col-span-2 relative cursor-pointer" id ="optionRock">
                     <div class ="w-13 h-13 mt-1 flex items-center justify-center relative z-10 rounded-full shadow-rock bg-rock-200">
                         <figure class ="w-10 h-10 flex items-center justify-center rounded-full shadow-option bg-white">
-                            <img src ="./assets/rock.svg" alt ="rock icon">
+                            <img class ="select-none" src ="./assets/rock.svg" alt ="rock icon">
                         </figure>
                     </div>
                     <span class ="w-18 h-1.5 absolute top-6.5 left-6.5 origin-left -rotate-[58deg] bg-line"></span>
+                    <h3 class ="mt-1.5 text-white text-md uppercase text-center" id ="youPicked">you picked</h3>
                 </article>
             </section>
             <button class ="w-52 h-4 mx-auto grid place-content-center text-white text-md font-semibold uppercase tracking-widest rounded-sm border border-white">rules</button>
         </main>
 
+        <script src ="./model.js"></script>
     </body>
 
 </html>
